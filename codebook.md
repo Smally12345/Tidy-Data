@@ -1,6 +1,5 @@
 # Getting and Cleaning Data Assignment
 
-## 1. Data
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals timeAccelerator-XYZ and timeGyroscope-XYZ. These time domain signals were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (timeBodyAccelerator-XYZ and timeGravityAccelerator-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -59,19 +58,18 @@ timeBodyGyroscopeJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
 
+After merging the datasets the subject column contains codes of subjects who participated in the research.
 
-## 2. Steps to clean the data
+### The activity_labels file contains mapping of activities and their codes:-
 
-Step 1. Create variables holding datasets X_train , X_test, Y_train, Y_test, features, subject_train, subject_test, activities.
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
 
-Step 2. Merge Train And Test datasets and give column names to this merged dataset using features data.
-
-Step 3. Extract Columns with mean and standard deviation as measurements for each measurement using select function from dplyr package.
-
-Step 4. Convert the activity column containg codes for the activities to acutal names of that activities using sapply function.
-
-Step 5. Give proper descriptive names to columns.
-
-Step 6. Create new dataset containing mean of each measurement grouped by subject and activites. Name of the new dataset is "Tidy_data.txt" .
-
+### IMP NOTE: 
+- Features are normalized and bounded within [-1,1].
+- Each feature vector is a row on the text file.
 
