@@ -1,6 +1,7 @@
 # Tidy-Data
 
-## Dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+## Dataset: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ## Files:
   1. run_analysis.R : R file for downloading and cleaning data as per assignment instructions.
