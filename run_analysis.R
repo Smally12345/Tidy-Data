@@ -52,7 +52,7 @@ data <- data[, !duplicated(names(data))]
 
 # Select columns with mean and standard deviation measurement
 
-data <- select(data, subject, activity, contains("mean"), contains("std"))
+data <- select(data, subject, activity, contains("mean()"), contains("std()"))
 
 
 
@@ -76,8 +76,8 @@ names(data) <- gsub("BodyBody", "Body", names(data))
 names(data) <- gsub("Acc", "Accelerator", names(data))
 names(data) <- gsub("Gyro", "Gyroscope", names(data))
 names(data) <- gsub("Mag", "Magnitude", names(data))
-
-
+names(data) <- gsub("-mean()", "Mean", names(data))
+names(data) <- gsub("-std()", "Std", names(data))
 
 
 # Step Five:-
