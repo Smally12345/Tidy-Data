@@ -41,7 +41,7 @@ names(activities) <- c("code", "activity")
 
 data <- cbind(subject, Y, X)
 
-# Remove duplicate columns
+# Remove duplicate columns : Some BandEnergy Columns have identical names
 
 data <- data[, !duplicated(names(data))]
 
@@ -52,7 +52,7 @@ data <- data[, !duplicated(names(data))]
 
 # Select columns with mean and standard deviation measurement
 
-mean_and_std_data <- select(data, subject, activity, contains("mean"), contains("std"))
+data <- select(data, subject, activity, contains("mean"), contains("std"))
 
 
 
@@ -61,7 +61,7 @@ mean_and_std_data <- select(data, subject, activity, contains("mean"), contains(
 
 # Give descriptive activity names to encoded actvity column in the dataset
 
-sapply(data$activity, function(x){activities[x,2]})
+data$activity <- sapply(data$activity, function(x){activities[x,2]})
 
 
 
